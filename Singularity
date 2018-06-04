@@ -32,6 +32,7 @@ mkdir -p /mnt/ffs17
 mkdir -p /mnt/local
 mkdir -p /mnt/ls15
 mkdir -p /opt/software
+mkdir -p /mnt/veiled
 
 ################################################################################
 # Run the user's login shell, or a user specified command
