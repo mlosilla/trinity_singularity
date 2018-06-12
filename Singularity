@@ -27,7 +27,7 @@ From: trinityrnaseq/trinityrnaseq
 ################################################################################
 # Install additional packages
 ################################################################################
-yum -y install vim
+#yum -y install vim
 
 ################################################################################
 # Create directories to enable access to common HPCC mount points
