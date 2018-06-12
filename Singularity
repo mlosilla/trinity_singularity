@@ -2,11 +2,13 @@
 # Basic bootstrap definition to build Trinity container from Docker container
 ################################################################################
 
+
+BootStrap: docker
+From: trinityrnaseq/trinityrnaseq
+
 sudo locale-gen en_US en_US.UTF-8
 sudo dpkg-reconfigure locales 
 
-#BootStrap: docker
-#From: trinityrnaseq/trinityrnaseq
 
 ################################################################################
 # Copy any necessary files into the container
