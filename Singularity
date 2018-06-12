@@ -6,9 +6,6 @@
 BootStrap: docker
 From: trinityrnaseq/trinityrnaseq
 
-sudo locale-gen en_US en_US.UTF-8
-sudo dpkg-reconfigure locales 
-
 
 ################################################################################
 # Copy any necessary files into the container
