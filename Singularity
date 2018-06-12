@@ -1,6 +1,13 @@
 ################################################################################
-# Basic bootstrap definition to build CentOS 7 container from Docker container
+# Basic bootstrap definition to build Trinity container from Docker container
 ################################################################################
+
+
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+
 
 BootStrap: docker
 From: trinityrnaseq/trinityrnaseq
@@ -20,7 +27,7 @@ From: trinityrnaseq/trinityrnaseq
 ################################################################################
 # Install additional packages
 ################################################################################
-#yum -y install vim
+yum -y install vim
 
 ################################################################################
 # Create directories to enable access to common HPCC mount points
@@ -32,7 +39,7 @@ mkdir -p /mnt/ffs17
 mkdir -p /mnt/local
 mkdir -p /mnt/ls15
 mkdir -p /opt/software
-mkdir -p /mnt/veiled
+#mkdir -p /mnt/veiled
 
 ################################################################################
 # Run the user's login shell, or a user specified command
