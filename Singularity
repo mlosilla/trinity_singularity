@@ -6,7 +6,7 @@
 BootStrap: docker
 From: trinityrnaseq/trinityrnaseq
 
-apt-get update && apt-get install libtiff5-dev
+sudo apt-get update && apt-get install libtiff5-dev
 
 ################################################################################
 # Copy any necessary files into the container
