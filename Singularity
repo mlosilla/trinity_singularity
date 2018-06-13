@@ -6,6 +6,7 @@
 BootStrap: docker
 From: trinityrnaseq/trinityrnaseq
 
+apt-get update && apt-get install libtiff.so.5
 
 ################################################################################
 # Copy any necessary files into the container
