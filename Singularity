@@ -6,8 +6,6 @@
 BootStrap: docker
 From: trinityrnaseq/trinityrnaseq
 
-sudo apt-get update && apt-get install libtiff5-dev
-
 ################################################################################
 # Copy any necessary files into the container
 ################################################################################
@@ -23,7 +21,7 @@ sudo apt-get update && apt-get install libtiff5-dev
 ################################################################################
 # Install additional packages
 ################################################################################
-apt-get install vim
+#apt-get install vim
 
 ################################################################################
 # Create directories to enable access to common HPCC mount points
