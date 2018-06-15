@@ -23,7 +23,7 @@ sudo apt-get update && apt-get install libtiff5-dev
 ################################################################################
 # Install additional packages
 ################################################################################
-#yum -y install vim
+apt-get install vim
 
 ################################################################################
 # Create directories to enable access to common HPCC mount points
@@ -35,7 +35,9 @@ mkdir -p /mnt/ffs17
 mkdir -p /mnt/local
 mkdir -p /mnt/ls15
 mkdir -p /opt/software
-#mkdir -p /mnt/veiled
+mkdir -p /mnt/veiled
+
+
 
 ################################################################################
 # Run the user's login shell, or a user specified command
@@ -48,3 +50,9 @@ if [[ "$@" == "" ]]; then
 else
   exec env -i TERM="$TERM" HOME="$HOME" $@
 fi
+
+
+######################################################
+%environment
+export LANG=C
+
