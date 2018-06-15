@@ -6,22 +6,12 @@
 BootStrap: docker
 From: trinityrnaseq/trinityrnaseq
 
-################################################################################
-# Copy any necessary files into the container
-################################################################################
-#%files
-#~/my_file /path/in/container
 
 %post
 ################################################################################
-# Install additional login shells for users that need them
-################################################################################
-#yum -y install tcsh ksh zsh
-
-################################################################################
 # Install additional packages
 ################################################################################
-#apt-get install vim
+sudo apt-get update && sudo apt-get install vim
 
 ################################################################################
 # Create directories to enable access to common HPCC mount points
