@@ -166,9 +166,6 @@ ENV TRINITY_HOME /usr/local/bin/trinityrnaseq
 
 ENV PATH=${TRINITY_HOME}:${PATH}
 
-COPY Dockerfile $SRC/Dockerfile.$TRINITY_VERSION
-
-
 
 ## patch the RSEM install... need convert-sam-for-rsem  too!
 WORKDIR $SRC
