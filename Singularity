@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y gcc g++ perl python automake make \
 build-essential wget libghc-zlib-dev libncurses-dev libpcre3-dev libxml2-dev locales libbz2-dev liblzma-dev \
         libblas-dev gfortran git unzip ftp libzmq3-dev nano ftp fort77 libreadline-dev libcurl4-openssl-dev default-jdk \
         libx11-dev libxt-dev x11-common libcairo2-dev libpng12-dev libreadline6-dev libjpeg8-dev pkg-config texlive-latex-base \
-        texinfo texlive-fonts-extra zip supervisor tcl-dev tk-dev vim\
+        texinfo texlive-fonts-extra zip supervisor tcl-dev tk-dev vim \
         && apt-get clean
 
 RUN curl -L https://cpanmin.us | perl - App::cpanminus
