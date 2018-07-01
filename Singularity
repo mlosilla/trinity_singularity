@@ -65,6 +65,9 @@ RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstall
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("fastcluster", dep = TRUE)'
 
 
+
+
+
 ## bowtie
 WORKDIR $SRC
 RUN wget https://sourceforge.net/projects/bowtie-bio/files/bowtie/1.2.1.1/bowtie-1.2.1.1-linux-x86_64.zip/download -O bowtie-1.2.1.1-linux-x86_64.zip && \
@@ -182,9 +185,6 @@ RUN wget https://github.com/deweylab/RSEM/archive/v1.3.0.tar.gz && \
 
 # adding multiqc
 RUN pip install git+https://github.com/ewels/MultiQC.git
-
-Bl
-
 
 
 %post
