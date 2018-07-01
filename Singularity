@@ -2,10 +2,6 @@
 # Basic bootstrap definition to build Trinity container from Docker container
 ################################################################################
 
-
-#BootStrap: docker
-#From: trinityrnaseq/trinityrnaseq
-
 FROM ubuntu:16.04
 MAINTAINER bhaas@broadinstitute.org
 
