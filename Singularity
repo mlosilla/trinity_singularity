@@ -43,8 +43,7 @@ ENV R_VERSION=R-3.4.1
 RUN curl https://cran.r-project.org/src/base/R-3/$R_VERSION.tar.gz -o $R_VERSION.tar.gz && \
         tar xvf $R_VERSION.tar.gz && \
         cd $R_VERSION && \
-	./configure && make && make install
-  ./configure --enable-memory-profiling -enable-R-shlib --with-blas --with-lapack --with-tcltk \
+	./configure --enable-memory-profiling -enable-R-shlib --with-blas --with-lapack --with-tcltk \
         --with-valgrind-instrumentation=3 --with-readline --with-cairo --with-libpng --with-jpeglib --with-x=no  && \
         make && make pdf && make info && make install && make install-info && make install-pdf
 	    
