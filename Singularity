@@ -44,7 +44,7 @@ RUN curl https://cran.r-project.org/src/base/R-3/$R_VERSION.tar.gz -o $R_VERSION
         tar xvf $R_VERSION.tar.gz && \
         cd $R_VERSION && \
 	./configure --enable-memory-profiling -enable-R-shlib --with-blas --with-lapack --with-tcltk \
-        --with-valgrind-instrumentation=3 --with-readline --with-cairo --with-libpng --with-jpeglib --with-x=no  && \
+        --with-valgrind-instrumentation=3 --with-readline --with-cairo --with-libpng --with-jpeglib --with-x=no && \
         make && make pdf && make info && make install && make install-info && make install-pdf
 	    
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("tidyverse", dep = TRUE)'
@@ -62,7 +62,6 @@ RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstall
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("argparse", dep = TRUE)'
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("sm", dep = TRUE)'
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("fastcluster", dep = TRUE)'
-
 
 
 
