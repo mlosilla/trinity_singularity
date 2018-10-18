@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y gcc g++ perl python automake make \
 				       gfortran \
 				      
                    
-build-essential wget libghc-zlib-dev libncurses-dev libpcre3-dev libxml2-dev locales libbz2-dev liblzma-dev \
+#build-essential wget libghc-zlib-dev libncurses-dev libpcre3-dev libxml2-dev locales libbz2-dev liblzma-dev \
         libblas-dev gfortran git unzip ftp libzmq3-dev nano ftp fort77 libreadline-dev libcurl4-openssl-dev default-jdk \
         libx11-dev libxt-dev x11-common libcairo2-dev libpng12-dev libreadline6-dev libjpeg8-dev pkg-config texlive-latex-base \
         texinfo texlive-fonts-extra zip supervisor tcl-dev tk-dev vim \
@@ -38,8 +38,8 @@ ENV BIN /usr/local/bin
 
 #RUN curl https://cran.r-project.org/src/base/R-3/$R_VERSION.tar.gz -o $R_VERSION.tar.gz && \
         tar xvf $R_VERSION.tar.gz && \
-        cd $R_VERSION && \
-	./configure --enable-memory-profiling -enable-R-shlib --with-blas --with-lapack --with-tcltk \
+#        cd $R_VERSION && \
+#	./configure --enable-memory-profiling -enable-R-shlib --with-blas --with-lapack --with-tcltk \
         --with-valgrind-instrumentation=3 --with-readline --with-cairo --with-libpng --with-jpeglib --with-x=no && \
         make && make pdf && make info && make install && make install-info && make install-pdf
 	    
