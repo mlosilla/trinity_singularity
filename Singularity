@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y gcc g++ perl python automake make \
                                        zlib1g-dev bzip2 libncurses5-dev \
 				       texlive-latex-base \
                                        default-jre \
-				       python-pip python-dev \
+				#       python-pip python-dev \
 				       gfortran \
 				       build-essential libghc-zlib-dev libncurses-dev libbz2-dev liblzma-dev libpcre3-dev libxml2-dev \
 				       libblas-dev gfortran git unzip ftp libzmq3-dev nano ftp fort77 libreadline-dev \
