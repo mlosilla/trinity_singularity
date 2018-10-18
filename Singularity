@@ -1,4 +1,3 @@
-
 FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y gcc g++ perl python automake make \
@@ -29,18 +28,18 @@ ENV BIN /usr/local/bin
 
 #####
 # Install R
-
+#
 #WORKDIR $SRC
-
+#
 #ENV R_VERSION=R-3.4.1
-
+#
 #RUN curl https://cran.r-project.org/src/base/R-3/$R_VERSION.tar.gz -o $R_VERSION.tar.gz && \
-        tar xvf $R_VERSION.tar.gz && \
+#        tar xvf $R_VERSION.tar.gz && \
 #        cd $R_VERSION && \
 #	./configure --enable-memory-profiling -enable-R-shlib --with-blas --with-lapack --with-tcltk \
-        --with-valgrind-instrumentation=3 --with-readline --with-cairo --with-libpng --with-jpeglib --with-x=no && \
-        make && make pdf && make info && make install && make install-info && make install-pdf
-	    
+#        --with-valgrind-instrumentation=3 --with-readline --with-cairo --with-libpng --with-jpeglib --with-x=no && \
+#        make && make pdf && make info && make install && make install-info && make install-pdf
+#	    
 #RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("tidyverse", dep = TRUE)'
 #RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("edgeR", dep = TRUE)'
 #RUN Rscript -e 'source("http://bioconductor.org/biocLite.R");library(BiocInstaller); biocLite("DESeq2", dep = TRUE)'
