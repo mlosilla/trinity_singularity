@@ -32,11 +32,11 @@ ENV BIN /usr/local/bin
 #####
 # Install R
 
-WORKDIR $SRC
+#WORKDIR $SRC
 
-ENV R_VERSION=R-3.4.1
+#ENV R_VERSION=R-3.4.1
 
-RUN curl https://cran.r-project.org/src/base/R-3/$R_VERSION.tar.gz -o $R_VERSION.tar.gz && \
+#RUN curl https://cran.r-project.org/src/base/R-3/$R_VERSION.tar.gz -o $R_VERSION.tar.gz && \
         tar xvf $R_VERSION.tar.gz && \
         cd $R_VERSION && \
 	./configure --enable-memory-profiling -enable-R-shlib --with-blas --with-lapack --with-tcltk \
