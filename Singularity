@@ -139,11 +139,29 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 RUN pip install numpy
 
 
+## patch the RSEM install... need convert-sam-for-rsem  too!
+WORKDIR $SRC
+RUN wget https://github.com/deweylab/RSEM/archive/v1.3.0.tar.gz && \
+    tar xvf v1.3.0.tar.gz && \
+            cd RSEM-1.3.0 && \
+                        make && \
+                                        cp rsem-* $BIN && \
+                                                        cp convert-sam-for-rsem $BIN && \
+                                                                            cp rsem_perl_utils.pm /usr/local/lib/site_perl/ && \
+                                                                                                    cd ../ && rm -r RSEM-1.3.0
+
+# adding multiqc
+RUN pip install git+https://github.com/ewels/MultiQC.git
+
+
+
 ##########
 ## Trinity
 
 
 WORKDIR $SRC
+
+RUN apt-get update && apt-get install -y cmake
 
 ENV TRINITY_VERSION="2.6.6"
 ENV TRINITY_CO="06f284a"
@@ -162,22 +180,11 @@ ENV TRINITY_HOME /usr/local/bin/trinityrnaseq
 ENV PATH=${TRINITY_HOME}:${PATH}
 
 
-## patch the RSEM install... need convert-sam-for-rsem  too!
-WORKDIR $SRC
-RUN wget https://github.com/deweylab/RSEM/archive/v1.3.0.tar.gz && \
-    tar xvf v1.3.0.tar.gz && \
-            cd RSEM-1.3.0 && \
-                        make && \
-                                        cp rsem-* $BIN && \
-                                                        cp convert-sam-for-rsem $BIN && \
-                                                                            cp rsem_perl_utils.pm /usr/local/lib/site_perl/ && \
-                                                                                                    cd ../ && rm -r RSEM-1.3.0
-
-# adding multiqc
-RUN pip install git+https://github.com/ewels/MultiQC.git
+COPY Dockerfile $SRC/Dockerfile.$TRINITY_VERSION
 
 
-%post
+
+
 ################################################################################
 # Install additional packages
 ################################################################################
